@@ -1,4 +1,4 @@
-cordova.define("com.phonegap.plugins.ParsePushPlugin.ParsePushPlugin", function(require, exports, module) { var serviceName = 'ParsePushPlugin';
+var serviceName = 'ParsePushPlugin';
 
 var _ = window._ ? window._ : Parse._;
 
@@ -60,5 +60,3 @@ var ParsePushPlugin = {
 // give ParsePushPlugin event handling capability so we can use it to trigger
 // push notification onReceive events
 module.exports = _.extend(ParsePushPlugin, Parse.Events);
-
-});
