@@ -30,10 +30,13 @@ cordova plugin add https://github.com/taivo/parse-push-plugin
 ```
 
 ####Android devices without Google Cloud Messaging:
-If you only care about GCM devices, you're good to go. Move on to the [Usage](#usage) section. 
+This fork does not automatically set up the Android manifest since automatic GCM support can mess things up if you really just want PPNS. So you'll have to add the necessary manifest declarations manually.
 
-The automatic setup above does not work for non-GCM devices. To support them, the `ParseBroadcastReceiver`
-must be setup to work properly. My guess is this receiver takes care of establishing a persistent connection that will
+##### For GCM support
+Please follow: http://blog.parse.com/learn/engineering/parse-push-adds-support-for-gcm/
+
+##### For PPNS Support
+The `ParseBroadcastReceiver` must be setup to work properly. My guess is this receiver takes care of establishing a persistent connection that will
 handle push notifications without GCM. Follow these steps for `ParseBroadcastReceiver` setup:
 
 1. Add the following to your AndroidManifest.xml, inside the `<application>` tag
