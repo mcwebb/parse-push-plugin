@@ -52,8 +52,12 @@ var ParsePushPlugin = {
 
 	receiveNotification: function(message) {},
 
-	resetBadge: function(successCb, errorCb) {
+	resetBadge: function(successCb, errorCb){
 		cordova.exec(successCb, errorCb, serviceName, 'resetBadge', []);
+	},
+
+	setBadgeNumber: function(value, successCb, errorCb){
+		cordova.exec(successCb, errorCb, serviceName, 'setBadgeNumber', [value]);
 	}
 };
 

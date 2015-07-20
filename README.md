@@ -25,8 +25,8 @@ Installation
 Pick one of these two commands:
 
 ```
-phonegap local plugin add https://github.com/taivo/parse-push-plugin
-cordova plugin add https://github.com/taivo/parse-push-plugin
+phonegap local plugin add https://github.com/1985media/parse-push-plugin
+cordova plugin add https://github.com/1985media/parse-push-plugin
 ```
 
 ####Android devices without Google Cloud Messaging:

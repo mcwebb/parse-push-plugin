@@ -97,6 +97,14 @@
     }
 }
 
+- (void)setBadgeNumber: (CDVInvokedUrlCommand *)command
+{
+    int badgeNumber = [[command.arguments objectAtIndex:0] intValue];
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    currentInstallation.badge = badgeNumber;
+    [currentInstallation saveEventually];
+}
+
 @end
 
 @implementation AppDelegate (CDVParsePlugin)
