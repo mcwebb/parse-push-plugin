@@ -13,9 +13,9 @@
     NSDictionary* dictionary = [arguments objectAtIndex:0];
     NSString *appId = dictionary[@"appId"];
     NSString *clientKey = dictionary[@"clientKey"];
-    //NSString *appId = [arguments objectAtIndex:0];
-    //NSString *clientKey = [arguments objectAtIndex:1];
     [Parse setApplicationId:appId clientKey:clientKey];
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation saveInBackground];
     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
